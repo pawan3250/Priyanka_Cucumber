@@ -4,7 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "cucumber-js -c cucumber.json"
+    "test": "node scripts/run-tests.js",
+    "test:allure": "node scripts/run-tests.js --allure",
+    "test:home": "node scripts/run-tests.js --allure -- --tags \"@home\"",
+    "allure:results": "node scripts/generate-allure-results.js",
+    "allure:report": "allure generate reports/allure-results -o reports/allure-report --clean",
+    "allure:open": "allure open reports/allure-report"
   },
   "keywords": [],
   "author": "",
@@ -14,6 +19,7 @@
     "@cucumber/cucumber": "^12.8.1",
     "@playwright/test": "^1.59.1",
     "@types/node": "^25.6.0",
+    "allure-commandline": "^2.38.1",
     "ts-node": "^10.9.2",
     "typescript": "^6.0.3"
   }
