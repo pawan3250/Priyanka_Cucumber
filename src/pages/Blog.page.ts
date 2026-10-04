@@ -1,9 +1,9 @@
 import { Locator, Page } from '@playwright/test';
+import { BasePage } from './BasePage';
 
 const BLOG_URL = 'https://practice.sdetunicorns.com/blog/';
 
-export class BlogPage {
-  readonly page: Page;
+export class BlogPage extends BasePage {
   readonly pageTitle: Locator;
   readonly articleTitle: Locator;
   readonly posts: Locator;
@@ -12,7 +12,7 @@ export class BlogPage {
   readonly recentPosts: Locator;
 
   constructor(page: Page) {
-    this.page = page;
+    super(page);
     this.pageTitle = page.locator('h1');
     this.articleTitle = page.locator('h1').first();
     this.posts = page.locator('main article');
@@ -22,7 +22,7 @@ export class BlogPage {
   }
 
   async navigate(): Promise<void> {
-    await this.page.goto(BLOG_URL, { waitUntil: 'domcontentloaded' });
+    await this.navigateTo(BLOG_URL);
   }
 
   getNavigationLink(linkName: string): Locator {

@@ -1,4 +1,4 @@
-import { Locator, Page } from '@playwright/test';
+﻿import { Locator, Page } from '@playwright/test';
 
 const HOME_URL = 'https://practice.sdetunicorns.com/';
 
@@ -33,9 +33,9 @@ export class HomePage {
     await this.learnMoreLink.click();
   }
 
-  async isLearnMoreOpeningNewTab(): Promise<boolean> { //boolean trur or false
+  async isLearnMoreOpeningNewTab(): Promise<boolean> {
     const target = await this.learnMoreLink.getAttribute('target');
-    return target === '_blank'; //open new tab 
+    return target === '_blank';
   }
 
   getRedirectedPageText(expectedText: string): Locator {

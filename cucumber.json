@@ -1,6 +1,14 @@
 {
   "default": {
-    "require": ["src/steps/**/*.ts", "src/support/**/*.ts"],
+    "require": [
+      "src/support/world.ts",
+      "src/steps/home.step.ts",
+      "src/steps/blog.step.ts",
+      "src/steps/about.step.ts",
+      "src/steps/shop.step.ts",
+      "src/steps/contact.step.ts",
+      "src/steps/myaccount.step.ts"
+    ],
     "requireModule": ["ts-node/register"],
     "paths": ["src/features/**/*.feature"],
     "format": [

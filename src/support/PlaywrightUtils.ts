@@ -7,50 +7,35 @@ export class PlaywrightUtils {
     }
   }
 
-  static async uncheckCheckbox(locator: Locator): Promise<void> {
+  static async UncheckCheckbox(locator: Locator): Promise<void> {
     if (await locator.isChecked()) {
       await locator.uncheck();
     }
   }
 
-  static async setCheckbox(locator: Locator, checked: boolean): Promise<void> {
-    if (checked) {
-      await this.checkCheckbox(locator);
-      return;
+  static async waitForLocatorVisible(locator: Locator, timeout = 30000): Promise<void> {
+    await locator.waitFor({ state: 'visible', timeout });
+  }
+
+  static async waitForAnyVisible(locators: Locator[], timeout = 30000): Promise<void> {
+    const result = await Promise.race(
+      locators.map((locator) => locator.waitFor({ state: 'visible', timeout }).then(() => locator))
+    ).catch(() => undefined);
+
+    if (!result) {
+      throw new Error('None of the provided locators became visible within the timeout');
     }
-
-    await this.uncheckCheckbox(locator);
   }
 
-  static async selectByvalue(locator: Locator, value: string): Promise<void> {
-    await locator.selectOption(value);
-  }
-
-  static async selectByindex(locator: Locator, index: number): Promise<void> {
-    await locator.selectOption({ index });
-  }
-
-  static async selectBylabel(locator: Locator, label: string): Promise<void> {
-    await locator.selectOption({ label });
-  }
-
-  static async switchTowindow(context: BrowserContext, index: number): Promise<Page> {
-    const pages = context.pages();
-
-    if (index < 0 || index >= pages.length) {
-      throw new Error(`Invalid page index: ${index}`);
+  static async clickIfVisible(locator: Locator): Promise<void> {
+    if (await locator.isVisible().catch(() => false)) {
+      await locator.click();
     }
-
-    return pages[index];
   }
 
-  static async closeAllOtherWindows(page: Page): Promise<void> {
-    const pages = page.context().pages();
-    await Promise.all(pages.filter((contextPage) => contextPage !== page).map((contextPage) => contextPage.close()));
-  }
-
-  static async goback(page: Page): Promise<void> {
-    await page.goBack();
+  static async fillVisibleField(locator: Locator, value: string): Promise<void> {
+    await locator.waitFor({ state: 'visible' });
+    await locator.fill(value);
   }
 
   static async switchtoparentPage(context: BrowserContext, currentPage: Page): Promise<Page> {
@@ -60,8 +45,9 @@ export class PlaywrightUtils {
       return currentPage;
     }
 
-    const parentPage = pages[0];
-    await parentPage.bringToFront();
-    return parentPage;
+    const parentpage = pages[0];
+    await parentpage.bringToFront();
+    return parentpage;
   }
 }
+
