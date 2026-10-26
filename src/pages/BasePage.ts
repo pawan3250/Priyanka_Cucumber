@@ -12,7 +12,10 @@ export abstract class BasePage {
   }
 
   protected getHeading(headingText: string): Locator {
-    return this.page.getByRole('heading', { name: new RegExp(headingText, 'i') }).first();
+    return this.page.getByRole('heading', 
+        { name: new RegExp(headingText, 'i') }).first();
+
+    //aBOUT US ABOUT US aboutus
   }
 
   protected getLink(linkText: string): Locator {

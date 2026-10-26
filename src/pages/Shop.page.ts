@@ -1,37 +1,41 @@
 import { Locator, Page } from '@playwright/test';
 import { BasePage } from './BasePage';
 
-const SHOP_URL = 'https://practice.sdetunicorns.com/shop/';
+const SHOP_URL = 'https://qamasters-automationpractise.netlify.app/';
 
 export class ShopPage extends BasePage {
   readonly pageTitle: Locator;
-  readonly productTitles: Locator;
-  readonly categoryLinks: Locator;
+  readonly addToCartButtons: Locator;
+  readonly cartLink: Locator;
 
   constructor(page: Page) {
     super(page);
-    this.pageTitle = page.locator('h1');
-    this.productTitles = page.locator('ul.products li.product .woocommerce-loop-product__title');
-    this.categoryLinks = page.locator('.widget_product_categories a');
+    this.pageTitle = page.getByRole('heading', { name: /Home|Train With QA Masters/i }).first();
+    this.addToCartButtons = page.locator('button:has-text("Add to Cart"):visible');
+    this.cartLink = page.getByRole('link', { name: /Cart/i }).first();
   }
 
   async navigate(): Promise<void> {
     await this.navigateTo(SHOP_URL);
+    await this.page.getByRole('link', { name: /^Shop$/i }).first().click();
+    await this.addToCartButtons.first().waitFor({ state: 'visible', timeout: 15000 });
   }
 
-  async getProductTitles(): Promise<string[]> {
-    return this.productTitles.allTextContents();
+  async getProductCount(): Promise<number> {
+    return this.addToCartButtons.count();
   }
 
   getPageHeading(headingText: string): Locator {
     return this.getHeading(headingText);
   }
 
-  getCategoryLink(categoryName: string): Locator {
-    return this.categoryLinks.filter({ hasText: new RegExp(categoryName, 'i') }).first();
+  getCartLink(): Locator {
+    return this.cartLink;
   }
 
-  getProductLink(productName: string): Locator {
-    return this.productTitles.filter({ hasText: new RegExp(productName, 'i') }).first();
+  async clickFirstAddToCart(): Promise<void> {
+    const button = this.addToCartButtons.first();
+    await button.waitFor({ state: 'visible', timeout: 15000 });
+    await button.click({ force: true });
   }
 }

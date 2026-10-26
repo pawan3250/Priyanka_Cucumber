@@ -1,28 +1,30 @@
 import { Locator, Page } from '@playwright/test';
 import { BasePage } from './BasePage';
 
-const CONTACT_URL = 'https://practice.sdetunicorns.com/contact/';
+const CONTACT_URL = 'https://qamasters-automationpractise.netlify.app/';
 
 export class ContactPage extends BasePage {
   readonly pageTitle: Locator;
   readonly heading: Locator;
-  readonly form: Locator;
   readonly nameField: Locator;
   readonly emailField: Locator;
   readonly phoneField: Locator;
+  readonly topicSelect: Locator;
+  readonly experienceSelect: Locator;
   readonly messageField: Locator;
   readonly submitButton: Locator;
 
   constructor(page: Page) {
     super(page);
-    this.pageTitle = page.locator('h1');
-    this.heading = page.getByRole('heading', { name: /Let's talk|Send Us Message/i }).first();
-    this.form = page.locator('form').filter({ has: page.locator('input[name*="everest_forms[form_fields]"]') }).first();
-    this.nameField = page.locator('input[name*="ys0GeZISRs-1"]').first();
-    this.emailField = page.locator('input[name*="LbH5NxasXM-2"]').first();
-    this.phoneField = page.locator('input[name*="66FR384cge-3"]').first();
-    this.messageField = page.locator('textarea[name*="yhGx3FOwr2-4"]').first();
-    this.submitButton = page.locator('form input[name="everest_forms[submit]"], form button[name="everest_forms[submit]"]').first();
+    this.pageTitle = page.getByRole('heading', { name: /Send Us a Message|Let's Talk Automation/i }).first();
+    this.heading = this.pageTitle;
+    this.nameField = page.locator('#qam-name').first();
+    this.emailField = page.locator('#qam-email').first();
+    this.phoneField = page.locator('#qam-phone').first();
+    this.topicSelect = page.locator('select').nth(0);
+    this.experienceSelect = page.locator('select').nth(1);
+    this.messageField = page.locator('#qam-message').first();
+    this.submitButton = page.locator('button:has-text("Send Message")').first();
   }
 
   async navigate(): Promise<void> {
@@ -31,10 +33,6 @@ export class ContactPage extends BasePage {
 
   getPageHeading(headingText: string): Locator {
     return this.getHeading(headingText);
-  }
-
-  getField(labelText: string): Locator {
-    return this.page.getByLabel(new RegExp(labelText, 'i')).first();
   }
 
   async fillForm(data: { name: string; email: string; phone: string; message: string }): Promise<void> {

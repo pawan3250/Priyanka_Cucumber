@@ -1,74 +1,61 @@
-import { DataTable, Given, Then, When } from '@cucumber/cucumber';
+import { Given, Then, When } from '@cucumber/cucumber';
 import { expect } from '@playwright/test';
 import { HomePage } from '../pages/Home.page';
-import { PlaywrightUtils } from '../support/PlaywrightUtils';
 import { CustomWorld } from '../support/world';
 
-let homePage: HomePage;
-
-Given('I am on the SDET Unicorns home Page', async function (this: CustomWorld) {
-homePage = new HomePage(this.page);
-await homePage.navigate();
+Given('I am on the QA Masters home page', async function (this: CustomWorld) {
+  const homePage = new HomePage(this.page);
+  await homePage.navigate();
 });
 
-Then('I should see the home page heading {string}', async function (this: CustomWorld, expectedHeading: string){
-await expect(homePage.mainHeading).toHaveText(expectedHeading); 
-
-});
-
-Then('I should see the special sale heading {string}', async function (this: CustomWorld, expectedHeading: string) {
-//verifyMainHeading(expectedHeading);
-  await expect(homePage.specialSaleHeading).toHaveText(expectedHeading);
-});
-
-Then('I should see the redirected page text {string}', async function (this: CustomWorld, expectedText: string) {
-  
-  await expect(homePage.getRedirectedPageText(expectedText)).toBeVisible();
-
+Then('I should see the home page heading {string}', async function (this: CustomWorld, expectedHeading: string) {
+  await expect(this.page.getByText(expectedHeading, { exact: false }).first()).toBeVisible();
 });
 
 Then('I should see the home navigation link {string}', async function (this: CustomWorld, linkName: string) {
+  const homePage = new HomePage(this.page);
   await expect(homePage.getNavigationLink(linkName)).toBeVisible();
 });
 
-Then('I should see the following pricing plans:', async function (this:CustomWorld, dataTable:DataTable) {
+Then('I should see the redirected page text {string}', async function (this: CustomWorld, expectedText: string) {
+  const homePage = new HomePage(this.page);
+  await expect(homePage.getRedirectedPageText(expectedText)).toBeVisible();
+});
 
-  const plans =dataTable.hashes().map((row)=>row.planName);
-  for(const plan of plans){ //silver gold platinum
-    await expect(homePage.getPricingPlan(plan)).toBeVisible();
-
-
+Then('I should see the following navigation links:', async function (this: CustomWorld, dataTable: { hashes: () => { linkName: string }[] }) {
+  const homePage = new HomePage(this.page);
+  const links = dataTable.hashes().map((row) => row.linkName.trim());
+  for (const link of links) {
+    await expect(homePage.getNavigationLink(link)).toBeVisible();
   }
-
 });
 
 When('I click on the {string} button', async function (this: CustomWorld, buttonText: string) {
-  if (buttonText !== 'Learn more') {
-    throw new Error(`Button not implemented: ${buttonText}`);
-  }
-  // I have to validate that it opens in a new tab 
-  const opensnewTab =await homePage.isLearnMoreOpeningNewTab();
-  if(opensnewTab){
-    const newPagePromise =this.context.waitForEvent('page');
-    await homePage.clickLearnMore();
-    this.page=await newPagePromise;
-    homePage=new HomePage(this.page);
-    await this.page.waitForLoadState('domcontentloaded');
+  const homePage = new HomePage(this.page);
+  if (buttonText === 'Enroll Now') {
+    await homePage.clickEnrollNow();
     return;
   }
 
-  await homePage.clickLearnMore();
-  
+  if (buttonText === 'Shop') {
+    await this.page.locator('#qam-shop-link').first().click({ force: true });
+    return;
+  }
 
- 
+  if (buttonText === 'Add to Cart') {
+    await homePage.clickAddToCart();
+    return;
+  }
+
+  throw new Error(`Button not implemented: ${buttonText}`);
 });
 
-When('I return to the parent website', async function (this: CustomWorld) {
-  this.page =await PlaywrightUtils.switchtoparentPage(this.context,this.page);
- homePage=new HomePage(this.page);
- this.page.waitForLoadState('domcontentloaded');
-
-
+Then('I should see the cart link {string}', async function (this: CustomWorld, linkName: string) {
+  const homePage = new HomePage(this.page);
+  await expect(homePage.getNavigationLink(linkName)).toBeVisible();
 });
-       
+
+Then('I should see the add to cart button', async function (this: CustomWorld) {
+  await expect(this.page.locator('button:has-text("Add to Cart"):visible').first()).toBeVisible();
+});
  

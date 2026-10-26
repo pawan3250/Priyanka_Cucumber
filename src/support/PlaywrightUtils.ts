@@ -19,7 +19,10 @@ export class PlaywrightUtils {
 
   static async waitForAnyVisible(locators: Locator[], timeout = 30000): Promise<void> {
     const result = await Promise.race(
-      locators.map((locator) => locator.waitFor({ state: 'visible', timeout }).then(() => locator))
+      locators.map((locator) => 
+        
+        locator.waitFor({ state: 'visible', timeout }).
+        then(() => locator))
     ).catch(() => undefined);
 
     if (!result) {

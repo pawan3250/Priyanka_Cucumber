@@ -1,33 +1,32 @@
-import { DataTable, Given, Then } from '@cucumber/cucumber';
+import { Given, Then, When } from '@cucumber/cucumber';
 import { expect } from '@playwright/test';
 import { ShopPage } from '../pages/Shop.page';
-import { PlaywrightUtils } from '../support/PlaywrightUtils';
 import { CustomWorld } from '../support/world';
 
-let shopPage: ShopPage;
-
-Given('I am on the SDET Unicorns shop page', async function (this: CustomWorld) {
-  shopPage = new ShopPage(this.page);
+Given('I am on the QA Masters shop page', async function (this: CustomWorld) {
+  const shopPage = new ShopPage(this.page);
   await shopPage.navigate();
 });
 
 Then('I should see the shop page heading {string}', async function (this: CustomWorld, expectedHeading: string) {
-  const heading = shopPage.getPageHeading(expectedHeading);
-  await PlaywrightUtils.waitForLocatorVisible(heading);
-  await expect(heading).toBeVisible();
+  await expect(this.page.getByText(expectedHeading, { exact: false }).first()).toBeVisible();
 });
 
-Then('I should see the following products:', async function (this: CustomWorld, dataTable: DataTable) {
+Then('I should see the following products:', async function (this: CustomWorld, dataTable: { hashes: () => { productName: string }[] }) {
+  const shopPage = new ShopPage(this.page);
   const expectedProducts = dataTable.hashes().map((row) => row.productName.trim());
-  const actualProducts = (await shopPage.getProductTitles()).map((title) => title.trim());
+  expect(await shopPage.getProductCount()).toBeGreaterThan(0);
 
   for (const expectedProduct of expectedProducts) {
-    expect(actualProducts).toContain(expectedProduct);
+    await expect(this.page.getByText(expectedProduct, { exact: false })).toBeVisible();
   }
 });
 
 Then('I should see the shop product category {string}', async function (this: CustomWorld, categoryName: string) {
-  const category = shopPage.getCategoryLink(categoryName);
-  await PlaywrightUtils.waitForLocatorVisible(category);
-  await expect(category).toBeVisible();
+  await expect(this.page.getByText(categoryName, { exact: false })).toBeVisible();
+});
+
+When('I click the first product add to cart button', async function (this: CustomWorld) {
+  const shopPage = new ShopPage(this.page);
+  await shopPage.clickFirstAddToCart();
 });
