@@ -1,215 +1,245 @@
 - generic [active] [ref=e1]:
-  - generic [ref=e2]:
-    - link "Skip to content" [ref=e3] [cursor=pointer]:
-      - /url: "#zak-content"
-    - banner [ref=e4]:
-      - generic [ref=e7]:
-        - generic [ref=e9]:
-          - link "Practice E-Commerce Site" [ref=e10] [cursor=pointer]:
-            - /url: https://practice.sdetunicorns.com/
-            - img "Practice E-Commerce Site" [ref=e11]
-          - generic:
-            - paragraph [ref=e12]:
-              - link "Practice E-Commerce Site" [ref=e13] [cursor=pointer]:
-                - /url: https://practice.sdetunicorns.com/
-            - paragraph [ref=e14]: SDET Unicorns
-        - generic [ref=e15]:
-          - navigation [ref=e16]:
-            - list [ref=e17]:
-              - listitem [ref=e18]:
-                - link "Home" [ref=e19] [cursor=pointer]:
-                  - /url: https://practice.sdetunicorns.com/
-              - listitem [ref=e20]:
-                - link "About" [ref=e21] [cursor=pointer]:
-                  - /url: https://practice.sdetunicorns.com/about/
-              - listitem [ref=e22]:
-                - link "Shop" [ref=e23] [cursor=pointer]:
-                  - /url: https://practice.sdetunicorns.com/shop/
-              - listitem [ref=e24]:
-                - link "Blog" [ref=e25] [cursor=pointer]:
-                  - /url: https://practice.sdetunicorns.com/blog/
-              - listitem [ref=e26]:
-                - link "Contact" [ref=e27] [cursor=pointer]:
-                  - /url: https://practice.sdetunicorns.com/contact/
-              - listitem [ref=e28]:
-                - link "My account" [ref=e29] [cursor=pointer]:
-                  - /url: https://practice.sdetunicorns.com/my-account/
-          - generic [ref=e30]:
-            - link [ref=e32] [cursor=pointer]:
-              - /url: "#"
-              - img [ref=e33]
-            - listitem [ref=e36]:
-              - link "0" [ref=e37] [cursor=pointer]:
-                - /url: https://practice.sdetunicorns.com/cart/
-                - img [ref=e38]
-                - generic [ref=e40]: "0"
-          - link "Courses" [ref=e43] [cursor=pointer]:
-            - /url: https://sdetunicorns.com/courses
-    - generic [ref=e46]:
-      - heading "Blog" [level=1] [ref=e48]
-      - navigation "Breadcrumbs" [ref=e50]:
-        - list [ref=e51]:
-          - listitem [ref=e52]:
-            - link "Home" [ref=e53] [cursor=pointer]:
-              - /url: https://practice.sdetunicorns.com/
-            - text: /
-          - listitem [ref=e54]: Blog
-    - generic [ref=e57]:
-      - main [ref=e58]:
-        - generic [ref=e59]:
-          - article [ref=e60]:
-            - generic [ref=e61]:
-              - heading "IFrame Sample" [level=2] [ref=e63]:
-                - link "IFrame Sample" [ref=e64] [cursor=pointer]:
-                  - /url: https://practice.sdetunicorns.com/iframe-sample/
-              - generic [ref=e66]:
-                - text: Posted on
-                - link "October 29, 2021" [ref=e67] [cursor=pointer]:
-                  - /url: https://practice.sdetunicorns.com/iframe-sample/
-                  - time [ref=e68]: October 29, 2021
-              - paragraph [ref=e70]: IFrame example below can be used for testing purposes.
-              - link "Read More" [ref=e72] [cursor=pointer]:
-                - /url: https://practice.sdetunicorns.com/iframe-sample/
-                - text: Read More
-                - img [ref=e73]
-          - article [ref=e75]:
-            - link [ref=e77] [cursor=pointer]:
-              - /url: https://practice.sdetunicorns.com/successful-marketing-ads-for-your-business/
-              - img [ref=e78]
-            - generic [ref=e79]:
-              - heading "Successful Marketing Ads for Your Business" [level=2] [ref=e81]:
-                - link "Successful Marketing Ads for Your Business" [ref=e82] [cursor=pointer]:
-                  - /url: https://practice.sdetunicorns.com/successful-marketing-ads-for-your-business/
-              - generic [ref=e84]:
-                - text: Posted on
-                - link "June 19, 2020" [ref=e85] [cursor=pointer]:
-                  - /url: https://practice.sdetunicorns.com/successful-marketing-ads-for-your-business/
-                  - time [ref=e86]: June 19, 2020
-              - paragraph [ref=e88]: Lorem ipsum dolor sit amet, Tetur adipiscing elit. Atempor scelerisque olor sit mauris.
-              - link "Read More" [ref=e90] [cursor=pointer]:
-                - /url: https://practice.sdetunicorns.com/successful-marketing-ads-for-your-business/
-                - text: Read More
-                - img [ref=e91]
-          - article [ref=e93]:
-            - link [ref=e95] [cursor=pointer]:
-              - /url: https://practice.sdetunicorns.com/lets-building-your-business-from-scratch/
-              - img [ref=e96]
-            - generic [ref=e97]:
-              - heading "Let’s Building Your Business from Scratch" [level=2] [ref=e99]:
-                - link "Let’s Building Your Business from Scratch" [ref=e100] [cursor=pointer]:
-                  - /url: https://practice.sdetunicorns.com/lets-building-your-business-from-scratch/
-              - generic [ref=e102]:
-                - text: Posted on
-                - link "June 19, 2020" [ref=e103] [cursor=pointer]:
-                  - /url: https://practice.sdetunicorns.com/lets-building-your-business-from-scratch/
-                  - time [ref=e104]: June 19, 2020
-              - paragraph [ref=e106]: Orem ipsum dolor sit amet, siy dffee consectetur adipiscing elit. Massa iaculis sem aliquet neque.
-              - link "Read More" [ref=e108] [cursor=pointer]:
-                - /url: https://practice.sdetunicorns.com/lets-building-your-business-from-scratch/
-                - text: Read More
-                - img [ref=e109]
-          - article [ref=e111]:
-            - link [ref=e113] [cursor=pointer]:
-              - /url: https://practice.sdetunicorns.com/the-best-place-to-invest-your-money/
-              - img [ref=e114]
-            - generic [ref=e115]:
-              - heading "The Best Place to Invest Your Money" [level=2] [ref=e117]:
-                - link "The Best Place to Invest Your Money" [ref=e118] [cursor=pointer]:
-                  - /url: https://practice.sdetunicorns.com/the-best-place-to-invest-your-money/
-              - generic [ref=e120]:
-                - text: Posted on
-                - link "June 19, 2020" [ref=e121] [cursor=pointer]:
-                  - /url: https://practice.sdetunicorns.com/the-best-place-to-invest-your-money/
-                  - time [ref=e122]: June 19, 2020
-              - paragraph [ref=e124]: Rem ipsum dolor sit amet, Nem consectetur adipiscing elit. A tempor scelerisque mauris.
-              - link "Read More" [ref=e126] [cursor=pointer]:
-                - /url: https://practice.sdetunicorns.com/the-best-place-to-invest-your-money/
-                - text: Read More
-                - img [ref=e127]
-          - article [ref=e129]:
-            - link [ref=e131] [cursor=pointer]:
-              - /url: https://practice.sdetunicorns.com/the-big-seminar-for-your-right-investment/
-              - img [ref=e132]
-            - generic [ref=e133]:
-              - heading "The Big Seminar for Your Right Investment" [level=2] [ref=e135]:
-                - link "The Big Seminar for Your Right Investment" [ref=e136] [cursor=pointer]:
-                  - /url: https://practice.sdetunicorns.com/the-big-seminar-for-your-right-investment/
-              - generic [ref=e138]:
-                - text: Posted on
-                - link "June 18, 2020" [ref=e139] [cursor=pointer]:
-                  - /url: https://practice.sdetunicorns.com/the-big-seminar-for-your-right-investment/
-                  - time [ref=e140]: June 18, 2020
-              - paragraph [ref=e142]: Rem ipsum dolor sit amet, Nem consectetur adipiscing elit. A tempor scelerisque mauris.
-              - link "Read More" [ref=e144] [cursor=pointer]:
-                - /url: https://practice.sdetunicorns.com/the-big-seminar-for-your-right-investment/
-                - text: Read More
-                - img [ref=e145]
-      - complementary [ref=e147]:
-        - search [ref=e150]:
-          - generic [ref=e151]:
-            - img [ref=e153]
-            - generic [ref=e155]: "Search for:"
-            - searchbox "Search for:" [ref=e156]
-        - generic [ref=e157]:
-          - heading "Recent Posts" [level=2] [ref=e158]
-          - list [ref=e159]:
-            - listitem [ref=e160]:
-              - link "IFrame Sample" [ref=e161] [cursor=pointer]:
-                - /url: https://practice.sdetunicorns.com/iframe-sample/
-            - listitem [ref=e162]:
-              - link "Successful Marketing Ads for Your Business" [ref=e163] [cursor=pointer]:
-                - /url: https://practice.sdetunicorns.com/successful-marketing-ads-for-your-business/
-            - listitem [ref=e164]:
-              - link "Let’s Building Your Business from Scratch" [ref=e165] [cursor=pointer]:
-                - /url: https://practice.sdetunicorns.com/lets-building-your-business-from-scratch/
-            - listitem [ref=e166]:
-              - link "The Best Place to Invest Your Money" [ref=e167] [cursor=pointer]:
-                - /url: https://practice.sdetunicorns.com/the-best-place-to-invest-your-money/
-            - listitem [ref=e168]:
-              - link "The Big Seminar for Your Right Investment" [ref=e169] [cursor=pointer]:
-                - /url: https://practice.sdetunicorns.com/the-big-seminar-for-your-right-investment/
-    - contentinfo [ref=e170]:
-      - generic [ref=e173]:
-        - paragraph [ref=e178]: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elit feugiat sit purus varius. Non in turpis tincidunt nulla. Condimentum ultrices nunc odio ante.
-        - generic [ref=e180]:
-          - heading "Quick Links" [level=2] [ref=e181]
-          - list [ref=e183]:
-            - listitem [ref=e184]:
-              - link "Home" [ref=e185] [cursor=pointer]:
-                - /url: https://practice.sdetunicorns.com/
-            - listitem [ref=e186]:
-              - link "About" [ref=e187] [cursor=pointer]:
-                - /url: https://practice.sdetunicorns.com/about/
-            - listitem [ref=e188]:
-              - link "Blog" [ref=e189] [cursor=pointer]:
-                - /url: https://practice.sdetunicorns.com/blog/
-            - listitem [ref=e190]:
-              - link "Contact" [ref=e191] [cursor=pointer]:
-                - /url: https://practice.sdetunicorns.com/contact/
-            - listitem [ref=e192]:
-              - link "Support Form" [ref=e193] [cursor=pointer]:
-                - /url: https://practice.sdetunicorns.com/support-form/
-        - generic [ref=e195]:
-          - heading "Latest Posts" [level=2] [ref=e196]
-          - list [ref=e197]:
-            - listitem [ref=e198]:
-              - link "IFrame Sample" [ref=e199] [cursor=pointer]:
-                - /url: https://practice.sdetunicorns.com/iframe-sample/
-            - listitem [ref=e200]:
-              - link "Successful Marketing Ads for Your Business" [ref=e201] [cursor=pointer]:
-                - /url: https://practice.sdetunicorns.com/successful-marketing-ads-for-your-business/
-            - listitem [ref=e202]:
-              - link "Let’s Building Your Business from Scratch" [ref=e203] [cursor=pointer]:
-                - /url: https://practice.sdetunicorns.com/lets-building-your-business-from-scratch/
-        - generic [ref=e205]:
-          - heading "Contact Us" [level=2] [ref=e206]
-          - generic [ref=e207]:
-            - paragraph [ref=e208]: "Ph. : +(123) 456-7890"
-            - paragraph [ref=e209]: "Email : first.last@demos.com"
-            - paragraph [ref=e210]: "Loc : Moon Street , 446 Jupiter"
-            - paragraph [ref=e211]: "Open : 9AM – 6PM (Mon – Fri)"
-      - paragraph [ref=e216]:
-        - text: Copyright © 2020
-        - link "SDET Unicorns" [ref=e217] [cursor=pointer]:
-          - /url: https://sdetunicorns.com/
-  - status [ref=e218]
+  - generic [ref=e4]:
+    - link " hello@qamasters.io" [ref=e5] [cursor=pointer]:
+      - /url: mailto:hello@qamasters.io
+      - generic [ref=e6]: 
+      - text: hello@qamasters.io
+    - link " +1 (512) 555-1234" [ref=e7] [cursor=pointer]:
+      - /url: tel:+15125551234
+      - generic [ref=e8]: 
+      - text: +1 (512) 555-1234
+    - link " LinkedIn" [ref=e9] [cursor=pointer]:
+      - /url: "#"
+      - generic [ref=e10]: 
+      - text: LinkedIn
+  - banner [ref=e11]:
+    - generic [ref=e13]:
+      - link "QA Masters" [ref=e14] [cursor=pointer]:
+        - /url: "#"
+        - img [ref=e15]:
+          - generic [ref=e17]: QA
+        - text: QA
+        - generic [ref=e19]: Masters
+      - navigation [ref=e20]:
+        - link "Home" [ref=e21] [cursor=pointer]:
+          - /url: "#"
+        - link "Curriculum" [ref=e22] [cursor=pointer]:
+          - /url: "#"
+        - link "Blog" [ref=e23] [cursor=pointer]:
+          - /url: "#"
+        - link "Contacts" [ref=e24] [cursor=pointer]:
+          - /url: "#"
+        - link "Shop" [ref=e25] [cursor=pointer]:
+          - /url: "#"
+        - link "My Account" [ref=e26] [cursor=pointer]:
+          - /url: "#"
+        - link "Cart" [ref=e27] [cursor=pointer]:
+          - /url: "#"
+        - link "Enroll Now" [ref=e28] [cursor=pointer]:
+          - /url: "#"
+  - generic [ref=e31]:
+    - generic [ref=e32]:
+      - link "Home" [ref=e33] [cursor=pointer]:
+        - /url: "#"
+      - generic [ref=e34]: /
+      - generic [ref=e35]: Home
+    - heading "Train With QA Masters" [level=1] [ref=e36]
+    - paragraph [ref=e37]: Have questions about the program? Ready to start your automation journey? We're here to help — reach out anytime.
+  - generic [ref=e40]:
+    - generic [ref=e41]:
+      - generic [ref=e42]: 
+      - generic [ref=e44]:
+        - heading "Office" [level=4] [ref=e45]
+        - paragraph [ref=e46]: Austin, TX 78701United States
+    - generic [ref=e47]:
+      - generic [ref=e48]: 
+      - generic [ref=e50]:
+        - heading "Email" [level=4] [ref=e51]
+        - paragraph [ref=e52]: hello@qamasters.iosupport@qamasters.io
+    - generic [ref=e53]:
+      - generic [ref=e54]: 
+      - generic [ref=e56]:
+        - heading "Phone" [level=4] [ref=e57]
+        - paragraph [ref=e58]: +1 (512) 555-1234+1 (512) 555-5678
+    - generic [ref=e59]:
+      - generic [ref=e60]: 
+      - generic [ref=e62]:
+        - heading "Support Hours" [level=4] [ref=e63]
+        - paragraph [ref=e64]: "Mon – Fri: 9 AM – 7 PM CSTSat: 10 AM – 2 PM CST"
+  - generic [ref=e67]:
+    - generic [ref=e68]:
+      - generic [ref=e69]:
+        - generic [ref=e70]: 
+        - text: Let's Talk Automation
+      - heading "Questions? We Answer Fast." [level=2] [ref=e71]
+      - paragraph [ref=e72]: Whether you're evaluating the QA Masters Playwright SDET program, asking about batch schedules, or need technical guidance — our team of working SDET professionals responds within one business day.
+      - img [ref=e74]:
+        - generic [ref=e95]: playwright.config.ts
+        - generic [ref=e96]: import
+        - generic [ref=e97]: "{ defineConfig } from"
+        - generic [ref=e98]: "'@playwright/test';"
+        - generic [ref=e99]: export default
+        - generic [ref=e100]: "defineConfig({'{'}"
+        - generic [ref=e101]: "testDir:"
+        - generic [ref=e102]: "'./tests',"
+        - generic [ref=e103]: "workers:"
+        - generic [ref=e104]: 4,
+        - generic [ref=e105]: "reporter:"
+        - generic [ref=e106]: "'allure-playwright'"
+        - generic [ref=e107]: "{'}'});"
+        - generic [ref=e110]: Test Results — Allure Report
+        - generic [ref=e113]: ✓ 48 passed
+        - generic [ref=e114]: 96%
+        - generic [ref=e117]: ✗ 2 failed
+        - generic [ref=e118]: 4%
+        - generic [ref=e120]: "Duration: 1m 42s"
+        - generic [ref=e121]: "Browsers: Chrome · Firefox · Safari"
+        - generic [ref=e122]: "CI: GitHub Actions ✓"
+      - list [ref=e124]:
+        - listitem [ref=e125]:
+          - generic [ref=e126]: 
+          - text: Program enrollment, batch dates & pricing
+        - listitem [ref=e128]:
+          - generic [ref=e129]: 
+          - text: Playwright & Selenium framework doubt-clearing
+        - listitem [ref=e131]:
+          - generic [ref=e132]: 
+          - text: Mock interviews & resume review for SDET roles
+        - listitem [ref=e134]:
+          - generic [ref=e135]: 
+          - text: Corporate training & team upskilling enquiries
+        - listitem [ref=e137]:
+          - generic [ref=e138]: 
+          - text: Career guidance for 0–10+ year QA professionals
+    - generic [ref=e140]:
+      - generic [ref=e141]:
+        - heading "Send Us a Message" [level=3] [ref=e142]
+        - paragraph [ref=e143]: We'll get back to you within one business day.
+      - generic [ref=e144]:
+        - generic [ref=e145]:
+          - generic [ref=e146]:
+            - generic [ref=e147]: Full Name *
+            - textbox "Full Name *" [ref=e148]:
+              - /placeholder: Your Name
+          - generic [ref=e149]:
+            - generic [ref=e150]: Email Address *
+            - textbox "Email Address *" [ref=e151]:
+              - /placeholder: you@example.com
+        - generic [ref=e152]:
+          - generic [ref=e153]:
+            - generic [ref=e154]: Phone Number *
+            - textbox "Phone Number *" [ref=e155]:
+              - /placeholder: +1 (512) 000-0000
+          - generic [ref=e156]:
+            - generic [ref=e157]: Topic
+            - combobox "Topic" [ref=e158] [cursor=pointer]:
+              - option "Select a topic…" [selected]
+              - option "Program Enrollment"
+              - option "Playwright Doubt Clearing"
+              - option "Mock Interview / Resume Review"
+              - option "Corporate / Team Training"
+              - option "Career Guidance"
+              - option "Other"
+        - generic [ref=e159]:
+          - generic [ref=e160]: Current Experience Level
+          - combobox "Current Experience Level" [ref=e161] [cursor=pointer]:
+            - option "Select…" [selected]
+            - option "Fresher (0–1 year)"
+            - option "Junior QA (1–3 years)"
+            - option "Mid-level SDET (3–6 years)"
+            - option "Senior SDET / Lead (6+ years)"
+        - generic [ref=e162]:
+          - generic [ref=e163]: Message
+          - textbox "Message" [ref=e164]:
+            - /placeholder: Tell us how we can help…
+        - button " Send Message" [ref=e165] [cursor=pointer]:
+          - generic [ref=e166]: 
+          - text: Send Message
+        - paragraph [ref=e167]:
+          - generic [ref=e168]: 
+          - text: Your data is private and never shared with third parties.
+  - generic [ref=e171]:
+    - generic [ref=e172]:
+      - generic [ref=e173]: ⚡ Limited Seats — Next Batch Starting Soon
+      - generic [ref=e174]: Ready to Become a Playwright SDET Pro?
+      - paragraph [ref=e175]: Join 500+ QA engineers who've levelled up with QA Masters' industry-aligned, hands-on curriculum.
+    - generic [ref=e176]:
+      - link " Enroll Now" [ref=e177] [cursor=pointer]:
+        - /url: "#"
+        - generic [ref=e178]: 
+        - text: Enroll Now
+      - link "View Curriculum" [ref=e179] [cursor=pointer]:
+        - /url: "#"
+  - iframe [ref=e182]
+  - generic [ref=e185]:
+    - generic [ref=e186]: "Follow our learning community:"
+    - link "" [ref=e187] [cursor=pointer]:
+      - /url: "#"
+    - link "" [ref=e189] [cursor=pointer]:
+      - /url: "#"
+    - link "" [ref=e191] [cursor=pointer]:
+      - /url: "#"
+    - link "" [ref=e193] [cursor=pointer]:
+      - /url: "#"
+    - link "" [ref=e195] [cursor=pointer]:
+      - /url: "#"
+  - contentinfo [ref=e197]:
+    - generic [ref=e199]:
+      - generic [ref=e200]:
+        - generic [ref=e201]:
+          - img [ref=e202]:
+            - generic [ref=e204]: QA
+          - text: QA Masters
+        - paragraph [ref=e206]: Empowering QA professionals to master Playwright, Selenium, API testing, and AI-driven automation — from beginner to SDET Lead level.
+      - generic [ref=e207]:
+        - generic [ref=e208]: Quick Links
+        - generic [ref=e209]:
+          - link "Home" [ref=e210] [cursor=pointer]:
+            - /url: "#"
+          - link "About the Program" [ref=e211] [cursor=pointer]:
+            - /url: "#"
+          - link "Instructor Profiles" [ref=e212] [cursor=pointer]:
+            - /url: "#"
+          - link "Student Stories" [ref=e213] [cursor=pointer]:
+            - /url: "#"
+          - link "Connect With Us" [ref=e214] [cursor=pointer]:
+            - /url: "#"
+      - generic [ref=e215]:
+        - generic [ref=e216]: Resources
+        - generic [ref=e217]:
+          - link "Playwright Cheat Sheet" [ref=e218] [cursor=pointer]:
+            - /url: "#"
+          - link "SDET Interview Prep" [ref=e219] [cursor=pointer]:
+            - /url: "#"
+          - link "Framework Templates" [ref=e220] [cursor=pointer]:
+            - /url: "#"
+          - link "Blog & Tutorials" [ref=e221] [cursor=pointer]:
+            - /url: "#"
+          - link "Community Forum" [ref=e222] [cursor=pointer]:
+            - /url: "#"
+      - generic [ref=e223]:
+        - generic [ref=e224]: Contact Us
+        - generic [ref=e225]:
+          - generic [ref=e226]: 
+          - text: +1 (512) 555-1234
+        - generic [ref=e227]:
+          - generic [ref=e228]: 
+          - text: hello@qamasters.io
+        - generic [ref=e229]:
+          - generic [ref=e230]: 
+          - text: Austin, TX 78701, USA
+        - generic [ref=e231]:
+          - generic [ref=e232]: 
+          - text: "Mon–Fri: 9 AM – 7 PM CST"
+    - paragraph [ref=e234]:
+      - text: Copyright © 2025
+      - link "QA Masters" [ref=e235] [cursor=pointer]:
+        - /url: "#"
+      - text: . All rights reserved. | Built for SDET Professionals.
+  - text:                                              
+  - generic: ✓ Added to cart!
+  - text:                                             
+  - generic: ✓ Message sent! We'll reply within one business day.
+  - iframe [ref=e236]:
+    - button "Powered by Netlify — build your own site" [ref=f3e3] [cursor=pointer]:
+      - generic [ref=f3e13]: Powered by Netlify
