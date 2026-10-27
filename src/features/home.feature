@@ -1,9 +1,9 @@
 Feature: Home Page Functionality
 
-@home1
+@home
 Scenario: Verify the home page loads successfully
 Given I am on the QA Masters home page
-Then I should see the home page heading "Tain With QA Masters"
+Then I should see the home page heading "Train With QA Masters"
 
 @home
 Scenario Outline: Verify homepage navigation links are visible
