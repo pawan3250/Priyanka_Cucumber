@@ -2,9 +2,9 @@ name: Cucumber Playwright Tests
 
 on:
   push:
-    branches: [master]
+    branches: [default]
   pull_request:
-    branches: [master]
+    branches: [default]
   workflow_dispatch:
     inputs:
       test_tag:
@@ -69,4 +69,5 @@ jobs:
           name: test-reports
           path: reports/
           if-no-files-found: warn
-          retention-days: 12
+          retention-days: 15
+          
